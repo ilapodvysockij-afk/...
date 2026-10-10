@@ -1,34 +1,22 @@
-#name = [5,6]
-#print(type(name))
+import colorama
 
-#name = 'hello'
-#print(dir(name))
-#print(name.upper())
+def inspect_library():
+    print(f"Інтроспекція: colorama (Версія: {getattr(colorama, '__version__', 'N/A')}) ===")
+    print("\n[Усі атрибути (dir)]: ", dir(colorama))
 
-#name = "Python"
-#print(hasattr(name, "upper"))
+    print("\n Атрибути та Методи:")
 
-#text = "hello"
-#method = getattr(text, "upper")
-#print(method)
+    components = {
+        "Fore": "Клас з ANSI-кодами для зміни кольору тексту (шрифту).",
+        "Back": "Клас з ANSI-кодами для зміни кольору тла (фону).",
+        "Style": "Клас для зміни стилю тексту (яскравість) та його повного скидання.",
+        "init()": "Метод ініціалізації для коректної роботи кольорів у консолі Windows.",
+        "just_fix_windows_console()": "Сучасний метод активації підтримки ANSI в консолі Windows 10/11.",
+        "deinit()": "Метод для скасування дій init() та повернення стандартних потоків."
+    }
 
-#class Cat:
-#    def meow(self):
-#        print("meow")
-#
-#cat = Cat()
-#print(type(cat))
-#print(dir(cat))
-#print(hasattr(cat, 'meow'))
+    for name, comment in components.items():
+        print(f"• {name} — {comment}")
 
-#import inspect
-#def hello():
-#    print("Hello World")
-#class Cat:
-#    pass
-#print(inspect.isfunction(hello))
-#print(inspect.isclass(Cat))
-
-import sys
-print (sys.version)
-print (sys.platform)
+if __name__ == "__main__":
+    inspect_library()
